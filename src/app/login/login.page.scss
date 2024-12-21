@@ -1,0 +1,66 @@
+ion-content {
+  background: url('../../assets/loginpic.png') no-repeat center center fixed;
+  background-size: cover; /* Cover the entire area */
+  --background: transparent; /* Ensure the default background is transparent */
+  padding: 20px; /* Add padding to the content */
+  display: flex;
+  flex-direction: column; /* Arrange items in a column */
+  justify-content: flex-start; /* Align items at the top */
+  position: relative; /* Allow absolute positioning of child elements */
+  height: 100vh; /* Full height of the viewport */
+}
+
+.lower-items {
+  margin-top: 350px; /* Adjust this value to lower the items */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  width: 100%; /* Ensure it takes the full width */
+}
+
+h2 {
+  font-size: 24px; /* Adjust font size for the title */
+  color: white; /* Change color to ensure readability */
+  margin-bottom: 20px; /* Space below the title */
+  text-align: center; /* Center the title */
+}
+
+ion-item {
+  background: rgba(255, 255, 255, 0.8); /* Add a translucent background to items */
+  border-radius: 8px; /* Round the corners */
+  margin-bottom: 15px; /* Space between items */
+  width: 80%; /* Set a specific width for the items */
+}
+
+ion-label {
+  font-size: 12px; /* Smaller font size for the label */
+}
+
+ion-input {
+  font-size: 14px; /* Smaller font size for the input */
+  padding: 10px; /* Adjust padding for smaller input */
+}
+
+/* Prevent upward movement on focus */
+ion-item {
+  transition: transform 0.2s ease; /* Smooth transition for focusing */
+}
+
+ion-item:focus-within {
+  transform: translateY(0); /* Keep item stable when focused */
+}
+
+.button-row {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center the buttons */
+  margin-top: 20px; /* Space above the row */
+}
+
+ion-button {
+  margin: 0 10px; /* Add some margin between buttons */
+  height: 40px; /* Set a fixed height for the buttons */
+  font-size: 14px; /* Adjust font size for smaller buttons */
+  width: auto; /* Allow buttons to size based on content */
+  padding: 0 10px; /* Adjust padding for a smaller look */
+  color: aliceblue; /* Set button text color */
+}

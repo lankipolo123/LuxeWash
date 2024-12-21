@@ -1,0 +1,73 @@
+/* 
+ * App Global CSS 
+ * ---------------------------------------------------------------------------- 
+ * Put style rules here that you want to apply globally. These styles are for 
+ * the entire app and not just one component. Additionally, this file can be 
+ * used as an entry point to import other CSS/Sass files to be included in the 
+ * output CSS. 
+ * For more information on global stylesheets, visit the documentation: 
+ * https://ionicframework.com/docs/layout/global-stylesheets 
+ */
+
+/* Core CSS required for Ionic components to work properly */ 
+@import "@ionic/angular/css/core.css"; 
+
+/* Basic CSS for apps built with Ionic */ 
+@import "@ionic/angular/css/normalize.css"; 
+@import "@ionic/angular/css/structure.css"; 
+@import "@ionic/angular/css/typography.css"; 
+@import "@ionic/angular/css/display.css"; 
+
+/* Optional CSS utils that can be commented out */ 
+@import "@ionic/angular/css/padding.css"; 
+@import "@ionic/angular/css/float-elements.css"; 
+@import "@ionic/angular/css/text-alignment.css"; 
+@import "@ionic/angular/css/text-transformation.css"; 
+@import "@ionic/angular/css/flex-utils.css"; 
+
+/**
+ * Override for the dark mode 
+ * ----------------------------------------------------- 
+ * Ensure your primary color is set explicitly to your gradient. 
+ */ 
+
+:root {
+    /* Light Mode Primary Gradient */
+    --ion-color-primary: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+    /* Background and Text Colors */
+    --ion-background-color: #ffffff; /* White Background */
+    --ion-text-color: #000000; /* Black Text */
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Dark Mode Primary Gradient */
+        --ion-color-primary: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+        
+        /* Override Background and Text Colors */
+        --ion-background-color: #ffffff; /* White Background */
+        --ion-text-color: #000000; /* Black Text */
+    }
+}
+
+/* Define your tab styles here */
+.tabsColorL {
+    background: linear-gradient(to left, #0097b2, #7ed957);
+    --ion-background-color: transparent; 
+}
+.tabsColorP {
+    background: conic-gradient(#7ed957,#0097b2);
+    --ion-background-color: transparent; 
+}
+.tabsColorR {
+    background: linear-gradient(to right, #0097b2, #7ed957);
+    --ion-background-color: transparent; 
+}
+.tabsColorC {
+    background: radial-gradient(circle, #0097b2, #7ed957);
+    --ion-background-color: transparent; 
+}
+
+.homeMenu1{
+    font-size: 40px;
+  }

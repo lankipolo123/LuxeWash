@@ -1,0 +1,35 @@
+ion-content {
+    display: flex;
+    justify-content: center; /* Center the card horizontally */
+    align-items: flex-start; /* Align items to the top */
+    height: 100vh;          /* Full viewport height */
+    padding-top: 50px;      /* Padding at the top */
+  }
+  
+  .disclaimer-card {
+    background: linear-gradient(to right, #0097b2, #7ed957);
+    color: white; /* Change text color for better contrast */
+    padding: 16px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    width: 90%;        /* Width of the card */
+    max-width: 600px;  /* Maximum width */
+    margin-top: 20px;  /* Margin to push the card down */
+  }
+  .card-title {
+    font-size: 1.5em; /* Increase title font size */
+    text-align: center; 
+    color:azure;
+  }
+  
+  .disclaimer-text {
+    font-size: 1.2em; /* Increase text font size */
+    text-align: center; /* Center text alignment */
+  }
+  .photo-image {
+    width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: rounded corners for image */
+    background: linear-gradient(to right, #0097b2, #7ed957);
+    color: white; /* Change text color for better contrast */
+  }

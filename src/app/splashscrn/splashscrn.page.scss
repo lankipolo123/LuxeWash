@@ -1,0 +1,15 @@
+ion-content {
+  --background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  padding: 0; /* Remove any default padding */
+  margin: 0; /* Remove any default margin */
+}
+
+.loading-gif {
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  object-fit: cover; /* Ensure the image fully covers the screen */
+}

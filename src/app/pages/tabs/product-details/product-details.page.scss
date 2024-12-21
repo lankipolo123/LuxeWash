@@ -1,0 +1,178 @@
+.product-page {
+  background: linear-gradient(to bottom, #0097b2, #7ed957);
+  --ion-background-color: transparent; 
+}
+
+.floating-back-button,
+.favorite-button {
+  position: absolute;
+  top: 20px;
+  font-size: 50px; /* Increased size for the icons */
+  z-index: 10;
+}
+
+.floating-back-button {
+  left: 10px; /* Adjust left positioning */
+  color: #7ed957; /* Back button color */
+}
+
+.favorite-button {
+  right: 10px; /* Adjust right positioning */
+  color: red; /* Heart button color */
+}
+
+.product-image {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  width: 90%; /* Increased width for product image */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 20px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0097b2;
+  text-align: left;
+  margin: 5px 0;
+}
+
+.product-description {
+  color: #666; /* Retained color for description */
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.product-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: bold;
+}
+
+.current-price {
+  color: #15e252;
+  font-size: 20px;
+}
+
+.star-rating {
+  display: flex;
+  align-items: center;
+  color: #ffc107;
+}
+
+/* Quantity Selector and Action Buttons in the same row */
+.quantity-and-buttons-container {
+  display: flex; /* Use flexbox to align elements in a row */
+  align-items: center; /* Center items vertically */
+  margin-top: 10px; /* Space above the row */
+}
+
+/* Quantity Selector Layout */
+.quantity-selector {
+  display: flex; /* Keep horizontal layout */
+  align-items: center; /* Center items vertically */
+  margin-right: 10px; /* Reduced space between quantity selector and action buttons */
+}
+
+/* Adjustments for the quantity buttons */
+.quanBtn {
+  color: white; /* Set text color to white */
+  width: 40px; /* Set button width */
+  height: 40px; /* Set button height */
+  display: flex; /* Ensure flex for centering */
+  justify-content: center; /* Center content */
+  align-items: center; /* Center content */
+  margin: 0 5px; /* Space around the buttons */
+  font-size: 34px;
+}
+
+/* Quantity text style */
+.quantity {
+  font-size: 18px; /* Increase font size for visibility */
+  width: 30px; /* Set a fixed width */
+  text-align: center; /* Center text */
+}
+
+/* Adding space to the QTY label */
+.quantity-selector label {
+  margin-right: 10px; /* Add space to the right of the label */
+}
+
+/* Button Container for Buy Now and Add to Cart */
+.icon-buttons-container {
+  display: flex; /* Use flexbox layout */
+  align-items: center; /* Align buttons vertically */
+}
+/* Distinct styles for Add to Cart and Buy Now buttons */
+.cart-button {
+  width: 70px; /* Set a consistent width for both buttons */
+  height: 40px; /* Maintain the height of both buttons */
+  display: flex; /* Flexbox for proper alignment */
+  justify-content: center; /* Center the icon */
+  align-items: center; /* Center the icon */ /* Reduced space between buttons */
+  color: white; /* Set button text/icon color to white */
+}
+.buy-now-button {
+  width: 75px; /* Set a consistent width for both buttons */
+  height: 40px; /* Maintain the height of both buttons */
+  display: flex; /* Flexbox for proper alignment */
+  justify-content: center; /* Center the icon */
+  align-items: center; /* Center the icon */
+  margin-left: 5px; /* Reduced space between buttons */
+  color: white; /* Set button text/icon color to white */
+}
+
+/* Ensure ion-button elements have consistent padding */
+ion-button {
+  --padding-top: 0; /* Remove default padding to center the icon */
+  --padding-bottom: 0; /* Remove default padding to center the icon */
+}
+
+/* Additional styles for icons to be white */
+.white-icon {
+  color: white; /* Set icon color to white */
+  font-size: 54px; /* Set a specific font size for visibility */
+}
+
+/* Ensure white icons */
+
+
+/* Category Display Styles */
+.category-display {
+  padding: 10px 20px; /* Add padding for an oval shape */
+  border-radius: 30px; /* Rounded corners for an oval shape */
+  background-color: #007bff; /* Primary button color */
+  color: white; /* Text color */
+  font-weight: bold; /* Optional: make the text bold */
+  cursor: default; /* Indicate the display is not clickable */
+  display: inline-block; /* Make it behave like a block-level element */
+  text-align: center; /* Center the text */
+}
+.qty{
+  font-weight: bold; /* Bold text for product name */
+  font-size: 1.1em; /* Slightly larger font size */
+  color: #333; /* Darker color for better visibility */
+}

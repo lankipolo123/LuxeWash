@@ -1,0 +1,100 @@
+<ion-header class="tabsColorP">
+  <ion-toolbar>
+    <ion-title>CHECKOUT</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="tertiary">
+  <!-- Display cart items if available -->
+  <div *ngIf="checkoutItems.length > 0">
+    <h2>YOUR ORDERS</h2>
+    <ion-list>
+      <ion-item *ngFor="let item of checkoutItems">
+        <ion-thumbnail slot="start">
+          <img [src]="item.imageUrl" alt="{{ item.name }}" />
+        </ion-thumbnail>
+        <ion-label class="item-details">
+          <h3>{{ item.name }}</h3>
+          <p>Price: ₱{{ item.price }}</p>
+          <p>Quantity: {{ item.quantity }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <!-- Display message if cart is empty -->
+  <div *ngIf="checkoutItems.length === 0">
+    <p>No items in your cart</p>
+  </div>
+
+  <!-- Buyer Contact Information Section -->
+  <div class="buyer-info">
+    <ion-card>
+      <ion-card-content>
+        <form #checkoutForm="ngForm" (ngSubmit)="onSubmit()">
+          <ion-item>
+            <ion-icon name="person-outline" slot="start" color="primary"></ion-icon>
+            <ion-label position="stacked">Name</ion-label>
+            <ion-input [(ngModel)]="name" name="name" placeholder="Enter your full name" required></ion-input>
+          </ion-item>
+          <div *ngIf="checkoutForm.submitted && !name" class="error">Name is required</div>
+
+          <ion-item>
+            <ion-icon name="call-outline" slot="start" color="primary"></ion-icon>
+            <ion-label position="stacked">Contact Number</ion-label>
+            <ion-input [(ngModel)]="contactNumber" name="contactNumber" placeholder="Enter your contact number" type="tel" required></ion-input>
+          </ion-item>
+          <div *ngIf="checkoutForm.submitted && !contactNumber" class="error">Contact number is required</div>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Delivery Address Card -->
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-icon name="home-outline" slot="start" color="primary"></ion-icon>
+        <ion-label position="stacked">Address</ion-label>
+        <ion-input [(ngModel)]="address" name="address" placeholder="Enter your street, city, etc." required></ion-input>
+      </ion-item>
+      <div *ngIf="checkoutForm.submitted && !address" class="error">Address is required</div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Payment Options -->
+  <ion-card>
+    <ion-card-content>
+      <ion-label>Payment Option</ion-label>
+      <ion-radio-group [(ngModel)]="paymentOption" name="paymentOption" required>
+        <ion-item lines="none" class="payment-item">
+          <ion-icon name="cash-outline" slot="start" color="primary"></ion-icon>
+          <ion-label class="payment-label">Cash on Delivery</ion-label>
+          <ion-radio slot="end" value="cod"></ion-radio>
+        </ion-item>
+
+        <ion-item lines="none" class="payment-item">
+          <img src="assets/images/GCash_Logo.png" alt="GCashICON" class="small-icon" />
+          <ion-label class="payment-label">GCash</ion-label>
+          <ion-radio slot="end" value="gcash" [disabled]="true"></ion-radio>
+        </ion-item>
+
+        <ion-item lines="none" class="payment-item">
+          <ion-icon name="logo-paypal" slot="start" color="primary"></ion-icon>
+          <ion-label class="payment-label">PayPal</ion-label>
+          <ion-radio slot="end" value="paypal" [disabled]="true"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+      <div *ngIf="checkoutForm.submitted && !paymentOption" class="error">Payment option is required</div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Total Price Section -->
+  <h3 class="total-price">Total: ₱{{ totalPrice }}</h3>
+
+  <!-- Action Buttons -->
+  <div class="action-buttons">
+    <ion-button class="small-button cancel-button" fill="outline" color="danger" (click)="cancelOrder()">Cancel</ion-button>
+    <ion-button class="small-button checkout-button" expand="block" [disabled]="checkoutForm.invalid" (click)="onSubmit()">Checkout</ion-button>
+  </div>
+</ion-content>

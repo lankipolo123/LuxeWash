@@ -1,0 +1,59 @@
+<ion-content color="tertiary">
+  <div class="product-details-container">
+
+    <!-- Floating Back Button and Favorite Icon -->
+    <ion-icon class="floating-back-button" (click)="goBack()" name="arrow-back-circle-outline"></ion-icon>
+    <ion-icon class="favorite-button" name="heart-circle-outline" (click)="addToFavorites()"></ion-icon>
+
+    <!-- Product Image -->
+    <div class="product-image">
+      <img [src]="product?.image" alt="{{ product?.name }}" />
+    </div>
+
+    <!-- Product Info -->
+    <div class="product-info">
+      <h2 class="product-name">{{ product?.name }}</h2>
+      <p class="product-description">{{ product?.description }}</p>
+
+      <!-- Pricing and Rating Row -->
+      <div class="product-info-row">
+        <div class="star-rating">
+          <ion-icon name="star"></ion-icon> {{ product?.rating || '4.5' }} 
+        </div>
+        <div class="price">
+          <span class="current-price">₱{{ product?.price }}</span>
+        </div>
+        <div class="category">
+          <div class="category-display">
+            {{ product?.category }}
+          </div>
+        </div>
+      </div>
+      
+      <!-- Quantity Selector and Action Buttons -->
+      <div class="quantity-and-buttons-container">
+        <div class="quantity-selector">
+          <label class="qty">QTY:</label>
+          <ion-button shape="round" class="quanBtn" (click)="decreaseQuantity()">
+            - <!-- Text for decrease quantity -->
+          </ion-button>
+          <span class="quantity">{{ quantity }}</span>
+          <ion-button shape="round" class="quanBtn" (click)="increaseQuantity()">
+            + <!-- Text for increase quantity -->
+          </ion-button>
+        </div>
+        <div class="icon-buttons-container">
+          <ion-button shape="round" class="cart-button" (click)="addToCart()" fill="solid">
+            <ion-icon  class="white-icon"name="cart-sharp"></ion-icon>
+          </ion-button>
+          <ion-button shape="round"  color="secondary"class="buy-now-button" (click)="buyNow()" fill="solid">
+            <ion-icon  class="white-icon"name="cash-sharp"></ion-icon>
+          </ion-button>
+        </div>
+
+      </div>
+   <ion-item></ion-item>
+    </div>
+
+  </div>
+</ion-content>

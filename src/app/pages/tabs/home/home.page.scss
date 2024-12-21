@@ -1,0 +1,161 @@
+.content-padding {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ensure content fills the entire height */
+}
+.homeMenu{
+  font-size: 60px;
+}
+
+
+ion-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 55px;
+}
+
+.title-logo {
+  height: 85px; /* Adjust the height as needed */
+}
+ion-card {
+  margin-bottom: 10px;
+  transition: none;
+}
+
+/* Header Logo Image Size */
+
+/* Categories styles */
+.categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 5px 0;
+}
+
+.category-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 12px; /* Standard padding */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85em;
+  min-width: 60px;
+  white-space: nowrap;
+  margin: 0px; /* No margin between buttons */
+}
+
+.category-button:not(:last-child) {
+  margin-right: 1px; /* Minimal spacing only between buttons */
+}
+
+.category-button:hover {
+  background-color: #45a049;
+}
+
+.product-grid {
+  padding: 0 4px;
+}
+
+.product-card {
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* General button styles for Add to Cart and Buy Now */
+button {
+  flex: 1;
+  margin: 0 3px;
+  background-color: #0097b2;
+  color: white;
+  border: none;
+  padding: 3px 3px; /* Increased padding for larger button size */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1em; /* Slightly larger font size */
+}
+
+/* Cart Button Styles */
+.cart-button {
+  background-color:#7ed957;
+}
+
+.cart-button:hover {
+  background-color:  #6fbf4d;
+}
+
+/* Buy Now Button Styles */
+.buy-now-button {
+  background-color: #0097b2;
+}
+
+.buy-now-button:hover {
+  background-color:  #00859d;
+}
+.product-name {
+  font-weight: bold; /* Bold text for product name */
+  font-size: 1.1em; /* Slightly larger font size */
+  color: #333; /* Darker color for better visibility */
+}
+
+/* Product Price Style */
+.banner-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.product-info img:hover {
+  transform: none;
+  filter: none;
+}
+/* Cart Button Icon Style */
+.cart-button ion-icon {
+  font-size: 24px; /* Increase icon size for Cart button */
+}
+
+/* Buy Now Button Icon Style */
+.buy-now-button ion-icon {
+  font-size: 24px; /* Increase icon size for Buy Now button */
+}
+.price-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Space between price and rating */
+}
+
+.price {
+  display: flex;
+  align-items: center; /* Aligns the items vertically centered */
+  font-size: 1.2em; /* Adjust font size if needed */
+  color:#45a049;
+}
+.rating {
+  display: flex;
+  align-items: center;
+  color: #ffd700; /* Gold color for the star icon */
+  font-size: 16px; /* Adjust font size for the rating */
+}
+
+.rating ion-icon {
+  margin-right: 3px; /* Space between the star and rating number */
+  color: gold; /* Color of the star */
+  margin-left: 4px; /* Space between price and stars */
+  font-size: 1em; /* Adjust star size if needed */
+}

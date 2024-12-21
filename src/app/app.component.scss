@@ -1,0 +1,11 @@
+ion-toolbar {
+    --background: transparent;
+    --border-width: 0;
+  }
+  
+  ion-title {
+    color: #fff; /* Set text color to white or any color for better visibility */
+  }
+  ion-item.menu-item ion-label {
+    --color: white;
+  }

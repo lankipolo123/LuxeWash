@@ -1,0 +1,62 @@
+<ion-content color="tertiary">
+  <ion-header>
+    <ion-toolbar class="tabsColorP">
+      <ion-buttons slot="start">
+        <ion-menu-toggle>
+          <ion-button>
+            <ion-icon color="tertiary" slot="icon-only" name="menu"></ion-icon>
+          </ion-button>
+        </ion-menu-toggle>
+      </ion-buttons>
+      <div class="header-title">
+        <ion-icon name="cart" size="large" color="light"></ion-icon>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+
+  <ng-container *ngIf="cartItems.length > 0; else emptyCart">
+    <ion-list color="tertiary">
+      <ion-item *ngFor="let item of cartItems" lines="full">
+        <img [src]="item.imageUrl" alt="Product Image" style="width: 50px; height: 50px; margin-right: 10px;">
+        <ion-label>{{ item.name }}</ion-label>
+        <ion-label slot="end">₱{{ item.price }}</ion-label>
+        <ion-button color="danger" slot="end" (click)="removeFromCart(item)">X</ion-button>
+
+        <!-- Quantity Control -->
+        <div class="quantity-control" style="display: flex; align-items: center;">
+          <ion-button color="primary" fill="solid" class="nums" (click)="updateQuantity(item, item.quantity - 1, $event)">-</ion-button>
+          <ion-label style="margin: 0 10px;">{{ item.quantity }}</ion-label>
+          <ion-button color="primary" fill="solid" class="nums" (click)="updateQuantity(item, item.quantity + 1, $event)">+</ion-button>
+        </div>
+      </ion-item>
+
+      <!-- Total Price -->
+      <ion-item lines="full">
+        <ion-label>Total:</ion-label>
+        <ion-label slot="end">₱ {{ getTotalPrice() }}</ion-label>
+      </ion-item>
+
+      <!-- Buttons for Cancel All or Checkout-->
+      <div class="button-row" style="display: flex; justify-content: space-between;">
+        <ion-button color="danger" (click)="clearCart()">Cancel All</ion-button>
+        <ion-button color="secondary" (click)="openCheckoutAlert()">Checkout</ion-button>
+      </div>
+    </ion-list>
+  </ng-container>
+
+  <!-- Empty Cart Message -->
+  <ng-template #emptyCart>
+    <ion-item color="tertiary">
+      <ion-label class="centered-message">No items in the cart.</ion-label>
+    </ion-item>
+  </ng-template>
+
+  <!-- Popover for invalid quantity -->
+  <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false">
+    <ng-template>
+      <ion-content class="ion-padding popover-content">
+        <p>Values cannot be 0</p>
+      </ion-content>
+    </ng-template>
+  </ion-popover>
+</ion-content>

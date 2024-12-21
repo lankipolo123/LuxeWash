@@ -1,0 +1,91 @@
+<ion-content color="tertiary">
+  <ion-header>
+    <ion-toolbar class="tabsColorC">
+      <ion-buttons slot="start">
+        <ion-menu-toggle>
+          <ion-button>
+            <ion-icon color="tertiary" slot="icon-only" name="menu"></ion-icon>
+          </ion-button>
+        </ion-menu-toggle>
+      </ion-buttons>
+      <div class="header-icon-container">
+        <ion-icon name="person-circle" size="large" class="header-icon"></ion-icon> <!-- Larger icon in the center -->
+      </div>
+      <ion-buttons slot="end">
+        <ion-button fill="clear" color="light" (click)="openNavigationAlert()" class="navigate-button">
+          <ion-icon name="power-outline" size="large"></ion-icon> 
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- User Information Section -->
+  <ion-list class="borderBottom">
+    <ion-item color="tertiary" lines="full">
+      <ion-button slot="end" fill="clear" (click)="editProfile()">EDIT</ion-button>
+      <ion-label>
+        <ion-text class="ion-text-uppercase"><h4>{{ userName }}</h4></ion-text>
+        <p>{{ userPhone }} | {{ userEmail }}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none" detail="true" [routerLink]="['/', 'tabs', 'address']">
+      <ion-icon name="home-outline" slot="start" color="dark"></ion-icon>
+      <h5>Manage Addresses</h5>
+    </ion-item>
+    <ion-item lines="none" detail="true" [routerLink]="['tabs/disclaimer']">
+      <ion-icon name="document-text-outline" slot="start" color="dark"></ion-icon>
+      <h5>Disclaimer</h5>
+    </ion-item>
+  </ion-list>
+  
+
+  <!-- Favorite Products Section -->
+  <ion-list>
+    <ion-list-header>
+      <ion-label color="secondary" class="section-title">FAVORITE PRODUCTS</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let product of favoriteProducts">
+      <ion-thumbnail slot="start">
+        <img [src]="product.image" alt="{{ product.name }}" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ product.name }}</h2>
+        <p>Price: ₱{{ product.price }}</p>
+      </ion-label>
+      <ion-button color="danger" (click)="removeFromFavorites(product)">x</ion-button>
+    </ion-item>
+    <ion-item *ngIf="favoriteProducts.length === 0">
+      <ion-label>
+        <p>No favorite products added yet.</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Orders Section -->
+  <ion-list>
+    <ion-list-header>
+      <ion-label color="secondary" class="section-title">YOUR ORDERS</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let order of orders">
+      <ion-label>
+        <h2>Order Date: {{ order.date | date: 'medium' }}</h2>
+        <ion-list>
+          <ion-item *ngFor="let item of order.items">
+            <ion-thumbnail slot="start">
+              <img [src]="item.imageUrl" alt="{{ item.name }}" />
+            </ion-thumbnail>
+            <ion-label>
+              <h3>{{ item.name }}</h3>
+              <p>Price: ₱{{ item.price }} | Quantity: {{ item.quantity }}</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-label>
+    </ion-item>
+    <ion-item *ngIf="orders.length === 0">
+      <ion-label>
+        <p>No orders placed yet.</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

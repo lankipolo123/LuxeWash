@@ -1,0 +1,60 @@
+<ion-content>
+  <div class="form-container">
+    <h2>SIGN UP</h2>
+
+    <!-- First Name Input -->
+    <ion-item>
+      <ion-icon slot="start" name="person-outline"></ion-icon>
+      <ion-input [(ngModel)]="firstName" type="text" name="firstName" placeholder="First Name" (keyup.enter)="focusNextField('middleInitial')"></ion-input>
+    </ion-item>
+
+    <!-- Middle Initial Input -->
+    <ion-item>
+      <ion-icon slot="start" name="person-add-outline"></ion-icon>
+      <ion-input [(ngModel)]="middleInitial" type="text" name="middleInitial" placeholder="Middle Initial" (keyup.enter)="focusNextField('lastName')"></ion-input>
+    </ion-item>
+
+    <!-- Last Name Input -->
+    <ion-item>
+      <ion-icon slot="start" name="person-outline"></ion-icon>
+      <ion-input [(ngModel)]="lastName" type="text" name="lastName" placeholder="Last Name" (keyup.enter)="focusNextField('email')"></ion-input>
+    </ion-item>
+
+    <!-- Email Input -->
+    <ion-item>
+      <ion-icon slot="start" name="mail-outline"></ion-icon>
+      <ion-input [(ngModel)]="email" type="email" name="email" placeholder="Email" (keyup.enter)="focusNextField('phone')"></ion-input>
+    </ion-item>
+
+    <!-- Phone Number Input -->
+    <ion-item>
+      <ion-icon slot="start" name="call-outline"></ion-icon>
+      <ion-input [(ngModel)]="phone" type="tel" name="phone" placeholder="Phone Number" (keyup.enter)="focusNextField('password')"></ion-input>
+    </ion-item>
+
+    <!-- Password Input -->
+    <ion-item>
+      <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+      <ion-input [(ngModel)]="password" type="password" name="password" placeholder="Password" (keyup.enter)="focusNextField('confirmPassword')"></ion-input>
+    </ion-item>
+
+    <!-- Confirm Password Input -->
+    <ion-item>
+      <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+      <ion-input [(ngModel)]="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password" (keyup.enter)="signUp()"></ion-input>
+    </ion-item>
+
+    <!-- Error Message Display -->
+    <p *ngIf="errorMessage" style="color: red; text-align: center;">{{ errorMessage }}</p>
+
+    <!-- Sign Up Button -->
+    <div class="button-row">
+      <ion-button (click)="signUp()">Sign Up</ion-button>
+    </div>
+
+    <!-- Already have an account? Link -->
+    <div class="link-row" style="text-align: center; margin-top: 10px;">
+      <ion-button routerLink="/login" fill="clear">Already have an account? Log in</ion-button>
+    </div>
+  </div>
+</ion-content>

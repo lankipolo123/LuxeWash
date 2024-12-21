@@ -1,0 +1,70 @@
+<ion-content color="tertiary" class="content-padding">
+  <ion-header class="tabsColorL">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-toggle>
+        <ion-button>
+            <ion-icon color="tertiary"slot="icon-only" name="menu"></ion-icon>
+          </ion-button>
+        </ion-menu-toggle>
+      </ion-buttons>
+      <ion-title color="light" class="ion-text-center">
+        <div class="ion-justify-content-center">
+          <img src="assets/LuXe.png" alt="Logo" class="title-logo" />
+        </div>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-searchbar
+    placeholder="Search products..." 
+    [(ngModel)]="searchTerm" 
+    (ionInput)="filterProducts()"  
+    color="light" 
+    class="search-bar">
+  </ion-searchbar>
+
+  <div class="categories">
+    <div>
+      <button *ngFor="let category of categories" 
+              (click)="selectCategory(category)" 
+              class="category-button">
+        {{ category.name }}
+      </button>
+    </div>
+  </div>
+
+  <br>
+
+  <img src="assets/images/Buy.png" alt="Banner" class="banner-image" />
+
+  <ion-grid class="product-grid">
+    <ion-row>
+      <ion-col size="6" *ngFor="let product of filteredProducts">
+        <ion-card class="product-card">
+          <ion-card-content>
+            <img src="{{ product.image }}" alt="{{ product.name }}" (click)="navigateToProductDetails(product)" class="product-image"/>
+            <div class="product-info">
+              <div class="product-name">{{ product.name }}</div>
+              <div class="price-rating">
+                <span class="price">₱{{ product.price }}</span>
+                <span class="rating">
+                  <ion-icon name="star"></ion-icon> {{ product?.rating || '4.5' }}
+                </span>
+              </div>
+              <div class="button-row">
+                <button  class="cart-button" (click)="addToCart($event, product)">
+                  <ion-icon name="cart"></ion-icon>
+                </button>
+                <button class="buy-now-button" (click)="buyNow($event, product)">
+                  <ion-icon name="cash-outline"></ion-icon>
+                </button>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

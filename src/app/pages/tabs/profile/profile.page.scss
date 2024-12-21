@@ -1,0 +1,28 @@
+
+.title-logo {
+  height: 24px; 
+  margin-right: 8px; 
+  float: left; /* Pushes image to the far left */
+  vertical-align: middle;
+}
+
+.section-title {
+  text-align: center;      /* Centers the text */
+  font-size: 1.5em;       /* Increases the font size */
+  margin: 16px 0;         /* Adds some margin above and below */
+  font-weight: bold;      /* Makes the font bold (optional) */
+}
+
+.header-icon-container {
+  display: flex;                     /* Use flexbox for alignment */
+  justify-content: center;           /* Center the icon horizontally */
+  align-items: center;               /* Center the icon vertically */
+  flex-grow: 1;                      /* Allow the icon container to take available space */
+  height: 56px;                      /* Match the height of the toolbar */
+}
+
+.header-icon {
+  font-size: 3em;  /* Increase icon size using font-size to make it larger */
+  padding: 8px;    /* Padding around the icon */
+  color: white;    /* Set icon color to white for contrast */
+}

@@ -1,0 +1,38 @@
+<ion-content>
+  <div class="lower-items">
+    <h2 style="text-align: center;">LOGIN</h2>
+
+    <!-- Username (Email) Input -->
+    <ion-item>
+      <ion-icon slot="start" name="mail-outline"></ion-icon>
+      <ion-input 
+        [(ngModel)]="identifier" 
+        type="text" 
+        name="identifier" 
+        placeholder="Email"
+        (keyup.enter)="focusNextField('password')"></ion-input>
+    </ion-item>
+
+    <!-- Password Input -->
+    <ion-item>
+      <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+      <ion-input 
+        [(ngModel)]="password" 
+        type="password" 
+        name="password" 
+        placeholder="Password"
+        (keyup.enter)="login()"></ion-input>
+    </ion-item>
+
+    <!-- Error Message Display -->
+    <p *ngIf="errorMessage" style="color: red; text-align: center;">
+      {{ errorMessage }}
+    </p>
+  </div>
+
+  <!-- Login and Sign Up Buttons -->
+  <div class="button-row" style="text-align: center;">
+    <ion-button (click)="login()">Login</ion-button>
+    <ion-button routerLink="/signup">Sign Up</ion-button>
+  </div>
+</ion-content>

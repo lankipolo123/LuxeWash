@@ -1,0 +1,159 @@
+ion-title{
+  text-align: center;
+  color:#fef6d9;
+
+}
+ion-content {
+  padding: 20px;
+  background-color: #fef6d9; /* Light background for the entire page */
+}
+h2 {
+  text-align: center;
+}
+
+/* Cart Items */
+ion-list {
+  margin-bottom: 20px;
+}
+
+/* Order Item Details Layout */
+.item-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 15px;
+}
+
+ion-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 0;
+}
+
+ion-thumbnail {
+  width: 80px;
+  height: 80px;
+}
+
+/* Total Price */
+.total-price {
+  margin-top: 20px;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center; /* Center the total price text */
+}
+
+/* Buyer Information Section */
+.buyer-info {
+  margin-top: 20px;
+}
+
+ion-card {
+  margin-top: 20px;
+}
+
+ion-card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form Inputs */
+ion-input {
+  margin-bottom: 10px;
+}
+
+/* Icon Styling */
+ion-icon {
+  margin-right: 10px; /* Space between icon and text */
+}
+
+/* Delivery Address Card */
+ion-card {
+  margin-top: 20px;
+}
+
+ion-card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Payment Options Section */
+ion-radio-group {
+  margin-top: 10px;
+}
+
+ion-item {
+  padding-left: 0;
+  display: flex;
+  align-items: center; /* Align icon and radio button */
+  justify-content: space-between; /* Ensure space between items */
+}
+
+/* Payment Option Styling */
+ion-thumbnail {
+  width: 40px;
+  height: 40px;
+}
+
+ion-icon {
+  font-size: 24px; /* Adjust the icon size */
+}
+
+.small-icon {
+  width: 20px;  /* Adjust the width */
+  height: 20px; /* Adjust the height to make the image small */
+  object-fit: contain; /* Ensures the image maintains its aspect ratio */
+}
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  justify-content: space-between; /* Ensure buttons are spaced out */
+  gap: 10px; /* Add spacing between buttons */
+}
+
+.checkout-button {
+  --color: #fef6d9; /* Sets the text color for the button */
+  background-color: var(--ion-color-primary); /* Retains the primary background */
+  font-weight: bold;
+}
+.cancel-buttons{
+  font-weight: bold;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between; /* Ensure buttons are spaced out */
+  gap: 10px; /* Add spacing between buttons */
+}
+
+ion-button {
+  width: 48%; /* Make buttons take 48% of the width */
+}
+
+/* No Ion Item Lines */
+ion-item[lines="none"] {
+  --border-width: 0;
+  --inner-border-width: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Centered Label Text */
+.payment-method-name {
+  flex: 1;
+  text-align: center;
+  font-weight: 600;  /* Optional: Make the text bold */
+}
+.payment-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.payment-label {
+  flex: 1;
+  text-align: center;
+}

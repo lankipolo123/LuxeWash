@@ -1,0 +1,81 @@
+.quantity-control {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  position: relative; /* Set position to relative to use z-index */
+}
+
+.quantity-control ion-button {
+  z-index: 99; /* Ensure buttons have a higher stacking order */
+}
+
+.quantity-control ion-label {
+  margin: 0 8px; /* Add horizontal margin to label */
+  z-index: 0; /* Ensure label is below buttons */
+}
+
+.button-row {
+  display: flex; /* Use flexbox for row layout */
+  justify-content: space-between; /* Space buttons evenly */
+  padding: 16px; /* Add padding for spacing */
+}
+
+.header-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 56px; /* Match the toolbar height for vertical centering */
+  padding-right: 50px;
+}
+
+/* Styling for the Checkout button */
+#checkout-button {
+  --color: white; /* Set text color to white */
+  --ion-color-contrast: white; /* Ensure contrast color is white */
+}
+
+.button-row ion-button {
+  --ion-color-contrast: white !important; /* Overrides text color for solid buttons */
+  color: white !important; /* Additional force on color */
+}
+
+/* To make sure the nums buttons also have white text */
+::ng-deep .nums {
+  --ion-color-contrast: white !important; /* Overrides text color for solid buttons */
+  color: white !important; /* Additional force on color */
+}
+
+::ng-deep .alert-header {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center content horizontally */
+  font-weight: bold; /* Optional: make header bold */
+  font-size: 20px; /* Optional: adjust font size */
+  color: white; /* Optional: set header text color */
+}
+
+::ng-deep .alert-title {
+  text-align: center; /* Center the title text */
+}
+
+.centered-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; /* Centers vertically within the viewport height */
+  text-align: center;
+}
+//popOver
+
+.popover-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center; /* Center text */
+  background: linear-gradient(to top, #0097b2, #7ed957);
+  --ion-background-color: transparent;
+
+}
+
+.popover-content p {
+  color: #fefefe; /* Message color */
+  margin: 0; /* Remove default margin */
+}

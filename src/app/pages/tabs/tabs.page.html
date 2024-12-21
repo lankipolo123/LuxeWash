@@ -1,0 +1,19 @@
+<ion-tabs >
+  <ion-tab-bar class="tabsColorL" slot="bottom">
+    <ion-tab-button tab="home">
+      <ion-icon  color="light" name="home"></ion-icon>
+      <ion-label color="light">Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="cart">
+      <ion-icon  color="light"name="cart"></ion-icon>
+      <ion-label color="light">Cart</ion-label>
+      <span *ngIf="cartNotificationCount > 0" class="notification-badge">{{ getCartItemCount() }}</span>
+    </ion-tab-button>
+
+    <ion-tab-button tab="profile">
+      <ion-icon  color="light"name="person"></ion-icon>
+      <ion-label color="light">Profile</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

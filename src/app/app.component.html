@@ -1,0 +1,101 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" side="start" class="custom-menu">
+      <ion-header>
+        <ion-toolbar class="tabsColorL">
+          <div style="display: flex; justify-content: center; align-items: center;">
+            <ion-img src="assets/LuXe.png" style="width: 200px; height: 150px;"></ion-img>
+          </div>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="custom-content">
+        <ion-toolbar>
+          <ion-title class="center-title">Menu</ion-title>
+        </ion-toolbar>
+
+        <ion-item>
+          <ion-avatar slot="start">
+            <ion-img src="assets/LuXe.png"></ion-img>
+          </ion-avatar>
+          <ion-label>
+            <h2>{{ userDetails.firstName }} {{ userDetails.lastName }}</h2>
+            <p>Phone: {{ userDetails.phone || 'Not provided' }}</p>
+            <p>Email: {{ userDetails.email || 'Not provided' }}</p>
+          </ion-label>
+        </ion-item>
+        <ion-list lines="none"> <!-- Remove item separators -->
+          <ion-item button routerLink="tabs/company-history" class="menu-item">
+            <ion-icon slot="start" name="business"></ion-icon>
+            <ion-label>
+              <h3>Company History</h3>
+            </ion-label>
+          </ion-item>
+          <ion-item button routerLink="tabs/about" class="menu-item">
+            <ion-icon slot="start" name="information-circle"></ion-icon>
+            <ion-label>
+              <h3>About our Products</h3>
+            </ion-label>
+          </ion-item>
+          <ion-item button routerLink="tabs/cart" class="menu-item">
+            <ion-icon slot="start" name="cart"></ion-icon>
+            <ion-label>
+              <h3>Cart</h3>
+            </ion-label>
+          </ion-item>
+          <ion-item button routerLink="tabs/disclaimer" class="menu-item">
+            <ion-icon slot="start" name="apps"></ion-icon>
+            <ion-label>
+              <h3>About the app</h3>
+            </ion-label>
+          </ion-item>
+          <ion-item button routerLink="tabs/developers" class="menu-item">
+            <ion-icon slot="start" name="people"></ion-icon>
+            <ion-label>
+              <h3>Developers</h3>
+            </ion-label>
+          </ion-item>
+          <ion-item button routerLink="tabs/contact-us" class="menu-item">
+            <ion-icon slot="start" name="call"></ion-icon>
+            <ion-label>
+              <h3>Contact Us</h3>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>
+<style>
+  ion-menu.custom-menu {
+    --ion-background-color: #fef6d9;
+  }
+
+  ion-content.custom-content {
+    --background: #fef6d9;
+  }
+
+  ion-menu.custom-menu ion-list {
+    --border-width: 0; /* Remove item separators */
+  }
+
+  .menu-item {
+    text-align: center;
+    padding: 10px;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .center-title {
+    text-align: center;
+    width: 100%;
+    font-size: 23px;
+    font-weight: bold;
+    color: #333;
+  }
+</style>
